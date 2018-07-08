@@ -1,0 +1,9 @@
+this is a test text
+
+create a new repo in github
+
+clone it (empty repo) in local machine
+
+create your projects inside of the folder
+
+then commit
