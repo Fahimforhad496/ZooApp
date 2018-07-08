@@ -1,3 +1,5 @@
+using System.Security.Principal;
+
 namespace ZooApp.Models.Migrations
 {
     using System;
@@ -15,7 +17,7 @@ namespace ZooApp.Models.Migrations
                         Name = c.String(),
                         Food = c.String(),
                         Origin = c.String(),
-                        Quantity = c.String(),
+                        Quantity = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
