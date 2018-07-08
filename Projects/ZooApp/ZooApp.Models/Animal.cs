@@ -16,6 +16,6 @@ namespace ZooApp.Models
 
         public string Origin { get; set; }
 
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
     }
 }
