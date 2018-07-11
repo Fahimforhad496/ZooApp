@@ -48,7 +48,7 @@ namespace ZooApp.MvcClient.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Food,Origin,Quantity")] Animal animal)
+        public ActionResult Create(Animal animal)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace ZooApp.MvcClient.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Food,Origin,Quantity")] Animal animal)
+        public ActionResult Edit(Animal animal)
         {
             if (ModelState.IsValid)
             {
