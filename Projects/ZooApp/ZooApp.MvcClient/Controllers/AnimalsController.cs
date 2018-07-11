@@ -17,7 +17,9 @@ namespace ZooApp.MvcClient.Controllers
         // GET: Animals
         public ActionResult Index()
         {
-            return View(db.Animals.ToList());
+            var animals = db.Animals.AsQueryable();
+            int count = animals.Count();
+            return View(animals.ToList());
         }
 
         // GET: Animals/Details/5
