@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooApp.Services
+namespace ZooAppp.ViewModels
 {
-    public class Class1
+    public class ViewAnimal
     {
     }
 }
