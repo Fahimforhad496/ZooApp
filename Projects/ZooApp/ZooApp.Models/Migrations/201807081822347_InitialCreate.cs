@@ -13,7 +13,7 @@ namespace ZooApp.Models.Migrations
                 "dbo.Animals",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.String(nullable: false, maxLength:128),
                         Name = c.String(),
                         Food = c.String(),
                         Origin = c.String(),
