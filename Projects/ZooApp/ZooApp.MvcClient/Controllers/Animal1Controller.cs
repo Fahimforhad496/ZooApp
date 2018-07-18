@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZooApp.Models;
 using ZooApp.Services;
 using ZooApp.ViewModels;
 
@@ -24,6 +25,21 @@ namespace ZooApp.MvcClient.Controllers
         {
            ViewAnimal animal = service.GetAnimal(id);
             return View(animal);
+        }
+
+        [HttpGet]
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public ActionResult Create(Animal animal)
+        {
+            //save
+            return RedirectToAction("Index");
         }
     }
 }
