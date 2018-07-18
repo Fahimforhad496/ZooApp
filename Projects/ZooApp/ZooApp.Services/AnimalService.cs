@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using ZooApp.Models;
@@ -10,11 +11,12 @@ namespace ZooApp.Services
 {
     public class AnimalService
     {
+        //create  a db object
+        ZooContext db = new ZooContext();
 
         public List<ViewAnimal> GetAnimals()
         {
-           //create  a db object
-           ZooContext db = new ZooContext();
+           
 
 
             //Pulls all rows from table into RAM
@@ -28,7 +30,7 @@ namespace ZooApp.Services
             {
                 ViewAnimal viewAnimal = new ViewAnimal()
                 {
-                    Id =animal.Id,
+                    Id = animal.Id,
                     Quantity = animal.Quantity,
                     Origin = animal.Origin,
                     Type= animal.Type,
@@ -39,6 +41,26 @@ namespace ZooApp.Services
                 viewAnimals.Add(viewAnimal);
             }
             return viewAnimals;
+
+         
+        }
+
+        public ViewAnimal GetAnimal(int id)
+        {
+            Animal animal= db.Animals.Find(id);
+            return new ViewAnimal()
+            {
+                Food = animal.Food,
+                Quantity = animal.Quantity,
+                Name = animal.Name,
+                Type = animal.Type,
+                Origin = animal.Origin,
+                Price = animal.Price,
+                Id = animal.Id
+
+            
+            };
+
         }
     }
 }
