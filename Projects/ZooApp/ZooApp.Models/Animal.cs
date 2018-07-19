@@ -12,20 +12,70 @@ namespace ZooApp.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Index("Ix_AnimalName")]
 
         public string Name { get; set; }
 
-        public string Food { get; set; }
+        [Required]
+        [StringLength(50)]
+        [Index("Ix_AnimalOrigin")]
 
         public string Origin { get; set; }
-
-        public int Quantity { get; set; }
 
         public double Price { get; set; }
 
         [StringLength(100)]
 
         public string Type { get; set; }
+
+        public virtual ICollection<AnimalFood> AnimalFoods { get; set; }
+    }
+
+    public class Food
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Index("Ix_FoodName")]
+
+        public string Name { get; set; }
+       
+        public virtual ICollection<AnimalFood> AnimalFoods { get; set; }
+
+    }
+
+    public class AnimalFood
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        public int Id { get; set; }
+
+        [ForeignKey("Animal")]
+        [Required]
+
+        public int AnimalId { get; set; }
+        
+        public virtual Animal Animal { get; set; }
+
+        [ForeignKey("Food")]
+        [Required]
+
+        public int FoodId { get; set; }
+
+        public virtual Food Food { get; set; }
+
+        [Required]
+
+        public int Quantity { get; set; }
     }
 }

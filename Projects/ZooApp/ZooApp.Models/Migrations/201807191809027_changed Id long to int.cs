@@ -1,0 +1,69 @@
+namespace ZooApp.Models.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class changedIdlongtoint : DbMigration
+    {
+        public override void Up()
+        {
+            DropPrimaryKey("dbo.Animals");
+            var builder = CreateTable(
+                "dbo.AnimalFoods",
+                c => new
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    AnimalId = c.Int(nullable: false),
+                    FoodId = c.Int(nullable: false),
+                    Quantity = c.Int(nullable: false),
+                });
+
+            
+            builder
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Animals", t => t.AnimalId, cascadeDelete: true)
+                .ForeignKey("dbo.Foods", t => t.FoodId, cascadeDelete: true)
+                .Index(t => t.AnimalId)
+                .Index(t => t.FoodId);
+            
+            CreateTable(
+                "dbo.Foods",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, name: "Ix_FoodName");
+            
+            AlterColumn("dbo.Animals", "Id", c => c.Int(nullable: false, identity: true));
+            AlterColumn("dbo.Animals", "Name", c => c.String(nullable: false, maxLength: 50));
+            AlterColumn("dbo.Animals", "Origin", c => c.String(nullable: false, maxLength: 50));
+            AddPrimaryKey("dbo.Animals", "Id");
+            CreateIndex("dbo.Animals", "Name", name: "Ix_AnimalName");
+            CreateIndex("dbo.Animals", "Origin", name: "Ix_AnimalOrigin");
+            DropColumn("dbo.Animals", "Food");
+            DropColumn("dbo.Animals", "Quantity");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Animals", "Quantity", c => c.Int(nullable: false));
+            AddColumn("dbo.Animals", "Food", c => c.String());
+            DropForeignKey("dbo.AnimalFoods", "FoodId", "dbo.Foods");
+            DropForeignKey("dbo.AnimalFoods", "AnimalId", "dbo.Animals");
+            DropIndex("dbo.Foods", "Ix_FoodName");
+            DropIndex("dbo.AnimalFoods", new[] { "FoodId" });
+            DropIndex("dbo.AnimalFoods", new[] { "AnimalId" });
+            DropIndex("dbo.Animals", "Ix_AnimalOrigin");
+            DropIndex("dbo.Animals", "Ix_AnimalName");
+            DropPrimaryKey("dbo.Animals");
+            AlterColumn("dbo.Animals", "Origin", c => c.String());
+            AlterColumn("dbo.Animals", "Name", c => c.String());
+            AlterColumn("dbo.Animals", "Id", c => c.Long(nullable: false, identity: true));
+            DropTable("dbo.Foods");
+            DropTable("dbo.AnimalFoods");
+            AddPrimaryKey("dbo.Animals", "Id");
+        }
+    }
+}
