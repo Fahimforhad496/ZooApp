@@ -1,11 +1,9 @@
-using System.Security.Principal;
-
 namespace ZooApp.Models.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class RecreatingDb : DbMigration
     {
         public override void Up()
         {
@@ -13,11 +11,13 @@ namespace ZooApp.Models.Migrations
                 "dbo.Animals",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength:128),
+                        Id = c.Long(nullable: false, identity: true),
                         Name = c.String(),
                         Food = c.String(),
                         Origin = c.String(),
-                        Quantity = c.String(nullable: false),
+                        Quantity = c.Int(nullable: false),
+                        Price = c.Double(nullable: false),
+                        Type = c.String(maxLength: 100),
                     })
                 .PrimaryKey(t => t.Id);
             

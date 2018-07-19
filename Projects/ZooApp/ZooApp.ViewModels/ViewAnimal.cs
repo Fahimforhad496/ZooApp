@@ -9,7 +9,7 @@ namespace ZooApp.ViewModels
 {
     public class ViewAnimal
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public string Name { get; set; }
 

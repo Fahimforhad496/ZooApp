@@ -50,29 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="Migrations\201807081822347_InitialCreate.cs" />
-    <Compile Include="Migrations\201807081822347_InitialCreate.Designer.cs">
-      <DependentUpon>201807081822347_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807110301304_Testmigration.cs" />
-    <Compile Include="Migrations\201807110301304_Testmigration.Designer.cs">
-      <DependentUpon>201807110301304_Testmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807110311511_AddedPrice.cs" />
-    <Compile Include="Migrations\201807110311511_AddedPrice.Designer.cs">
-      <DependentUpon>201807110311511_AddedPrice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807110332183_AddedType.cs" />
-    <Compile Include="Migrations\201807110332183_AddedType.Designer.cs">
-      <DependentUpon>201807110332183_AddedType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807110335242_ModifiedAnimalType.cs" />
-    <Compile Include="Migrations\201807110335242_ModifiedAnimalType.Designer.cs">
-      <DependentUpon>201807110335242_ModifiedAnimalType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181656266_ModifiedAnimalId.cs" />
-    <Compile Include="Migrations\201807181656266_ModifiedAnimalId.Designer.cs">
-      <DependentUpon>201807181656266_ModifiedAnimalId.cs</DependentUpon>
+    <Compile Include="Migrations\201807190403221_RecreatingDb.cs" />
+    <Compile Include="Migrations\201807190403221_RecreatingDb.Designer.cs">
+      <DependentUpon>201807190403221_RecreatingDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,23 +63,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807081822347_InitialCreate.resx">
-      <DependentUpon>201807081822347_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807110301304_Testmigration.resx">
-      <DependentUpon>201807110301304_Testmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807110311511_AddedPrice.resx">
-      <DependentUpon>201807110311511_AddedPrice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807110332183_AddedType.resx">
-      <DependentUpon>201807110332183_AddedType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807110335242_ModifiedAnimalType.resx">
-      <DependentUpon>201807110335242_ModifiedAnimalType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181656266_ModifiedAnimalId.resx">
-      <DependentUpon>201807181656266_ModifiedAnimalId.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807190403221_RecreatingDb.resx">
+      <DependentUpon>201807190403221_RecreatingDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
