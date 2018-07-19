@@ -54,13 +54,9 @@
     <Compile Include="Migrations\201807190403221_RecreatingDb.Designer.cs">
       <DependentUpon>201807190403221_RecreatingDb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807191809027_changed Id long to int.cs" />
-    <Compile Include="Migrations\201807191809027_changed Id long to int.Designer.cs">
-      <DependentUpon>201807191809027_changed Id long to int.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807192342119_Animal Food and Animal Quantity added.cs" />
-    <Compile Include="Migrations\201807192342119_Animal Food and Animal Quantity added.Designer.cs">
-      <DependentUpon>201807192342119_Animal Food and Animal Quantity added.cs</DependentUpon>
+    <Compile Include="Migrations\201807192350222_AnimalFood.cs" />
+    <Compile Include="Migrations\201807192350222_AnimalFood.Designer.cs">
+      <DependentUpon>201807192350222_AnimalFood.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +70,8 @@
     <EmbeddedResource Include="Migrations\201807190403221_RecreatingDb.resx">
       <DependentUpon>201807190403221_RecreatingDb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807191809027_changed Id long to int.resx">
-      <DependentUpon>201807191809027_changed Id long to int.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807192342119_Animal Food and Animal Quantity added.resx">
-      <DependentUpon>201807192342119_Animal Food and Animal Quantity added.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807192350222_AnimalFood.resx">
+      <DependentUpon>201807192350222_AnimalFood.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

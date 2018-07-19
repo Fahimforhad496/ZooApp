@@ -7,13 +7,13 @@ namespace ZooApp.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changedIdlongtoint : IMigrationMetadata
+    public sealed partial class AnimalFood : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedIdlongtoint));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AnimalFood));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807191809027_changed Id long to int"; }
+            get { return "201807192350222_AnimalFood"; }
         }
         
         string IMigrationMetadata.Source

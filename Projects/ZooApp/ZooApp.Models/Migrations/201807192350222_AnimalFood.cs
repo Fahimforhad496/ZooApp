@@ -3,23 +3,20 @@ namespace ZooApp.Models.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class changedIdlongtoint : DbMigration
+    public partial class AnimalFood : DbMigration
     {
         public override void Up()
         {
             DropPrimaryKey("dbo.Animals");
-            var builder = CreateTable(
+            CreateTable(
                 "dbo.AnimalFoods",
                 c => new
-                {
-                    Id = c.Int(nullable: false, identity: true),
-                    AnimalId = c.Int(nullable: false),
-                    FoodId = c.Int(nullable: false),
-                    Quantity = c.Int(nullable: false),
-                });
-
-            
-            builder
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        AnimalId = c.Int(nullable: false),
+                        FoodId = c.Int(nullable: false),
+                        Quantity = c.Int(nullable: false),
+                    })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Animals", t => t.AnimalId, cascadeDelete: true)
                 .ForeignKey("dbo.Foods", t => t.FoodId, cascadeDelete: true)
@@ -43,12 +40,10 @@ namespace ZooApp.Models.Migrations
             CreateIndex("dbo.Animals", "Name", name: "Ix_AnimalName");
             CreateIndex("dbo.Animals", "Origin", name: "Ix_AnimalOrigin");
             DropColumn("dbo.Animals", "Food");
-            DropColumn("dbo.Animals", "Quantity");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Animals", "Quantity", c => c.Int(nullable: false));
             AddColumn("dbo.Animals", "Food", c => c.String());
             DropForeignKey("dbo.AnimalFoods", "FoodId", "dbo.Foods");
             DropForeignKey("dbo.AnimalFoods", "AnimalId", "dbo.Animals");
