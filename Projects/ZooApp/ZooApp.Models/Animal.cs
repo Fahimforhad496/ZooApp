@@ -27,6 +27,10 @@ namespace ZooApp.Models
 
         public string Origin { get; set; }
 
+        [Required]
+
+        public int Quantity { get; set; }
+
         public double Price { get; set; }
 
         [StringLength(100)]
