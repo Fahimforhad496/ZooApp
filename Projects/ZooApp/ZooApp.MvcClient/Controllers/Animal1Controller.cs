@@ -64,9 +64,10 @@ namespace ZooApp.MvcClient.Controllers
 
         [HttpGet]
 
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View();
+            
+            return View(service.GetDbAModel(id));
         }
 
         [HttpPost]

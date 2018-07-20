@@ -29,16 +29,8 @@ namespace ZooApp.Services
             List<ViewAnimal> viewAnimals = new List<ViewAnimal>();
             foreach (Animal animal in animals)
             {
-                ViewAnimal viewAnimal = new ViewAnimal()
-                {
-                    Id = animal.Id,
-                    
-                    Origin = animal.Origin,
-                    Type= animal.Type,
-                   
-                    Name= animal.Name,
-                    Price = animal.Price,
-                };
+                ViewAnimal viewAnimal = new ViewAnimal(animal);
+               
                 viewAnimals.Add(viewAnimal);
             }
             return viewAnimals;
@@ -49,17 +41,8 @@ namespace ZooApp.Services
         public ViewAnimal Get(int id)
         {
             Animal animal= db.Animals.Find(id);
-            return new ViewAnimal()
-            {
-                
-                Name = animal.Name,
-                Type = animal.Type,
-                Origin = animal.Origin,
-                Price = animal.Price,
-                Id = animal.Id
+            return new ViewAnimal(animal);
 
-            
-            };
 
         }
 

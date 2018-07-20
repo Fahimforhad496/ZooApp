@@ -4,11 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooApp.Models;
 
 namespace ZooApp.ViewModels
 {
     public class ViewAnimal
     {
+        public ViewAnimal(Animal animal )
+        {
+            Id = animal.Id;
+            Origin = animal.Origin;
+            Type = animal.Type;
+            Quantity = animal.Quantity;
+            Name = animal.Name;
+            Price = animal.Price;
+        }
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -22,12 +32,5 @@ namespace ZooApp.ViewModels
         [StringLength(100)]
 
         public string Type { get; set; }
-    }
-
-    public class ViewFood
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
     }
 }

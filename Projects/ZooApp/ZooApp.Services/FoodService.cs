@@ -21,12 +21,7 @@ namespace ZooApp.Services
             var viewFoods = new List<ViewFood>();
             foreach (var l in list)
             {
-                var viewFood = new ViewFood()
-                {
-                    Id = l.Id,
-                    Name = l.Name,
-                 
-                };
+                var viewFood = new ViewFood(l);
                 viewFoods.Add(viewFood);
             }
             return viewFoods;
@@ -37,14 +32,8 @@ namespace ZooApp.Services
         public ViewFood Get(int id)
         {
             var find = db.Foods.Find(id);
-            return new ViewFood()
-            {
+            return new ViewFood(find);
 
-                Name = find.Name,
-                Id = find.Id
-
-
-            };
 
         }
 
