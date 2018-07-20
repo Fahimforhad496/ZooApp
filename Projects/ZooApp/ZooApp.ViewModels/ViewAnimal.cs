@@ -9,11 +9,9 @@ namespace ZooApp.ViewModels
 {
     public class ViewAnimal
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
-
-        public string Food { get; set; }
 
         public string Origin { get; set; }
 
@@ -24,5 +22,12 @@ namespace ZooApp.ViewModels
         [StringLength(100)]
 
         public string Type { get; set; }
+    }
+
+    public class ViewFood
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
     }
 }

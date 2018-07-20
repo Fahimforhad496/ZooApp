@@ -15,7 +15,7 @@ namespace ZooApp.Services
         //create  a db object
         ZooContext db = new ZooContext();
 
-        public List<ViewAnimal> GetAnimals()
+        public List<ViewAnimal> GetAll()
         {
            
 
@@ -46,7 +46,7 @@ namespace ZooApp.Services
          
         }
 
-        public ViewAnimal GetAnimal(int id)
+        public ViewAnimal Get(int id)
         {
             Animal animal= db.Animals.Find(id);
             return new ViewAnimal()
@@ -87,7 +87,7 @@ namespace ZooApp.Services
             return true;
         }
 
-        public Animal GetDbAnimal(int id)
+        public Animal GetDbAModel(int id)
         {
             return db.Animals.Find(id);
         }
