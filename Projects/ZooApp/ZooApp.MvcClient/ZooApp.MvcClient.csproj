@@ -220,7 +220,6 @@
     <Content Include="Views\Food\Create.cshtml" />
     <Content Include="Views\Food\Edit.cshtml" />
     <Content Include="Views\Food\Delete.cshtml" />
-    <Content Include="Views\Animal1\Index.cshtml" />
     <Content Include="Views\Animal1\Details.cshtml" />
     <Content Include="Views\Animal1\Create.cshtml" />
     <Content Include="Views\Animal1\Edit.cshtml" />
@@ -229,6 +228,7 @@
     <Content Include="Views\AnimalFoods\Delete.cshtml" />
     <Content Include="Views\AnimalFoods\Details.cshtml" />
     <Content Include="Views\AnimalFoods\Edit.cshtml" />
+    <Content Include="Views\Animal1\Index.cshtml" />
     <Content Include="Views\AnimalFoods\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
