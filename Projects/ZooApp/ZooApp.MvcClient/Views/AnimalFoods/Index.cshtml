@@ -49,9 +49,15 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
             @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
-            @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }) |
+            @Html.ActionLink("FoodDetails", "IndexDetail", new {id = item.FoodId}) |
+
+
         </td>
     </tr>
 }
 
 </table>
+
+
+<h3>Total: @ViewBag.Total</h3>
