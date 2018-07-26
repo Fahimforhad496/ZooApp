@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ZooApp.Models
 {
-    public class Animal
+    public partial class Animal
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -38,5 +38,23 @@ namespace ZooApp.Models
         public string Type { get; set; }
 
         public virtual ICollection<AnimalFood> AnimalFoods { get; set; }
+    }
+
+    public partial class Animal : IValidatableObject
+    {
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+
+           
+            ZooContext db = new ZooContext();
+            Name = Name.ToUpper();
+            var dbModel = db.Animals.FirstOrDefault(x => x.Name.ToUpper() == Name);
+            if (dbModel != null)
+            {
+                ValidationResult error = new ValidationResult("Name Already Exists", new [] {"Name"});
+                yield return error;
+            }
+            
+        }
     }
 }
